@@ -1,0 +1,19 @@
+@font-face {
+  font-family: unown;
+  src: url(../fonts/Unown.ttf);
+}
+
+div.banner {
+  text-align: center;
+}
+
+#unown-output {
+  font-family: unown;
+  text-align: center;
+}
+
+#character-input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

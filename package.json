@@ -1,0 +1,21 @@
+{
+  "name": "text-to-unown",
+  "version": "1.0.1",
+  "description": "Convert regular characters to their corresponding Unown pokemon characters.",
+  "main": "dist/app.js",
+  "start": "node dist/app.js",
+  "engines": {
+    "node": "4.1.1"
+  },
+  "dependencies": {
+    "express": "~4.13.4",
+    "ejs": "~2.4.1",
+    "jquery": "~2.2.0"
+  },
+  "devDependencies": {
+    "babel": "~6.3.26",
+    "babel-preset-es2015": "~6.3.13",
+    "babelify": "~7.2.0",
+    "browserify": "~13.0.0"
+  }
+}
