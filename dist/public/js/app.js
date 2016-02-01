@@ -9858,8 +9858,26 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   (0, _jquery2.default)("#character-input").keyup(function (event) {
     var input = (0, _jquery2.default)("#character-input").val();
+    var pressedKeyCode = event.which;
 
-    (0, _jquery2.default)("#unown-text").text(input);
+    // check if user is pressing arrow keys to move the cursor in the input
+    switch (pressedKeyCode) {
+      case 37:
+        return;
+      case 40:
+        return;
+      case 39:
+        return;
+      case 38:
+        return;
+      default:
+        break;
+    }
+
+    // check for acceptable unown characters and display the input as them
+    if (characterMap.hasOwnProperty(pressedKeyCode) || pressedKeyCode === 32) (0, _jquery2.default)("#unown-text").text(input);else {
+      if (input.length == 1) (0, _jquery2.default)("#character-input").val('');else (0, _jquery2.default)("#character-input").val(input.slice(0, -1));
+    }
   });
 });
 

@@ -18,7 +18,30 @@ $(document).ready(() => {
 
   $("#character-input").keyup((event) => {
     let input = $("#character-input").val();
+    let pressedKeyCode = event.which;
 
-    $("#unown-text").text(input);
+    // check if user is pressing arrow keys to move the cursor in the input
+    switch(pressedKeyCode) {
+      case 37:
+        return;
+      case 40:
+        return;
+      case 39:
+        return;
+      case 38:
+        return;
+      default:
+        break;
+    }
+
+    // check for acceptable unown characters and display the input as them
+    if(characterMap.hasOwnProperty(pressedKeyCode) || pressedKeyCode === 32)
+      $("#unown-text").text(input);
+    else {
+      if(input.length == 1)
+        $("#character-input").val('');
+      else
+        $("#character-input").val(input.slice(0, -1))
+    }
   });
 });
